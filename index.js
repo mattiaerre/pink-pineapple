@@ -1,5 +1,5 @@
-require('dotenv').config();
 const debug = require('debug')('pink-pineapple:index');
+require('dotenv').config();
 const oc = require('oc');
 const dependencies = require('./package.json').dependencies;
 
