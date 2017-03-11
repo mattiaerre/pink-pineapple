@@ -3,15 +3,21 @@ require('dotenv').config();
 const oc = require('oc');
 const dependencies = require('./package.json').dependencies;
 
+const getDependencies = () => { // eslint-disable-line
+  return Object.keys(dependencies)
+    .filter(name => (name !== 'dotenv'))
+    .map(name => name);
+};
+
 const configuration = {
   baseUrl: process.env.BASE_URL,
-  dependencies: Object.keys(dependencies).map(name => name),
+  dependencies: getDependencies(),
+  discovery: true,
   env: {
     name: process.env.ENV_NAME
   },
   pollingInterval: Number(process.env.POLLING_INTERVAL),
   port: Number(process.env.PORT) || 3000,
-  refreshInterval: Number(process.env.REFRESH_INTERVAL),
   s3: {
     bucket: process.env.S3_BUCKET,
     componentsDir: process.env.S3_COMPONENTS_DIR,
