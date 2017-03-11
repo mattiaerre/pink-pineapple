@@ -1,10 +1,11 @@
 require('dotenv').config();
-
 const debug = require('debug')('pink-pineapple:index');
 const oc = require('oc');
+const dependencies = require('./package.json').dependencies;
 
 const configuration = {
   baseUrl: process.env.BASE_URL,
+  dependencies: Object.keys(dependencies).map(name => name),
   env: {
     name: process.env.ENV_NAME
   },
