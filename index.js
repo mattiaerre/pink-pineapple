@@ -2,6 +2,7 @@ const debug = require('debug')('pink-pineapple:index');
 require('dotenv').config();
 const oc = require('oc');
 const dependencies = require('./package.json').dependencies;
+const plugins = require('./plugins');
 
 const getDependencies = () => { // eslint-disable-line
   return Object.keys(dependencies)
@@ -33,6 +34,8 @@ const configuration = {
 debug(`configuration: ${JSON.stringify(configuration, 0, 2)}`);
 
 const registry = new oc.Registry(configuration);
+
+plugins(registry);
 
 registry.start((error, app) => { // eslint-disable-line
   if (error) {
