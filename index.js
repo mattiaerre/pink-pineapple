@@ -3,6 +3,7 @@ require('dotenv').config();
 const oc = require('oc');
 const dependencies = require('./package.json').dependencies;
 const plugins = require('./plugins');
+const graphql = require('./graphql');
 
 const getDependencies = () => { // eslint-disable-line
   return Object.keys(dependencies)
@@ -36,6 +37,11 @@ debug(`configuration: ${JSON.stringify(configuration, 0, 2)}`);
 const registry = new oc.Registry(configuration);
 
 plugins(registry);
+
+const copy = Object.assign({}, configuration);
+copy.graphqlUrl = '/graphql';
+
+graphql(registry, copy);
 
 registry.start((error, app) => { // eslint-disable-line
   if (error) {
