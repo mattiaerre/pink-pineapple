@@ -57,7 +57,7 @@
     "react-dom": "^15.5.4",
     "react-input-box-done-typing": "^2.2.1",
     "react-lite": "^0.15.34",
-    "styled-components": "^1.4.5",
+    "styled-components": "next",
     "updtr": "^1.0.0",
     "url-join": "^2.0.1",
     "webpack": "^2.4.1"
