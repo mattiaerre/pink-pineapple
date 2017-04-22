@@ -1,5 +1,7 @@
 const debug = require('debug')('pink-pineapple:index');
 require('dotenv').config();
+const express = require('express');
+const path = require('path');
 const oc = require('oc');
 const dependencies = require('./package.json').dependencies;
 const plugins = require('./plugins');
@@ -20,6 +22,7 @@ const configuration = {
   },
   pollingInterval: Number(process.env.POLLING_INTERVAL),
   port: Number(process.env.PORT) || 3000,
+  prefix: '/v1/',
   s3: {
     bucket: process.env.S3_BUCKET,
     componentsDir: process.env.S3_COMPONENTS_DIR,
@@ -42,6 +45,8 @@ const copy = Object.assign({}, configuration);
 copy.graphqlUrl = '/graphql';
 
 graphql(registry, copy);
+
+registry.app.use('/v2', express.static(path.join(__dirname, '/public')));
 
 registry.start((error, app) => { // eslint-disable-line
   if (error) {

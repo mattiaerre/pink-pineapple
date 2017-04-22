@@ -4,6 +4,7 @@
   "description": "An \"Open\" OpenComponents registry hosted on Heroku",
   "main": "index.js",
   "scripts": {
+    "bundle": "webpack",
     "start": "node index.js",
     "start:dev": "DEBUG=pink-pineapple:* nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,22 +32,33 @@
   "dependencies": {
     "debug": "^2.6.3",
     "dotenv": "^4.0.0",
+    "express": "^4.15.2",
     "express-graphql": "^0.6.4",
     "graphql": "^0.9.3",
+    "lokka": "^1.7.0",
+    "lokka-transport-http": "^1.6.1",
     "moment": "^2.18.1",
     "node-fetch": "^1.6.3",
     "oc": "^0.36.25",
+    "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-input-box-done-typing": "^2.2.1",
-    "styled-components": "next"
+    "react-lite": "^0.15.34",
+    "styled-components": "^1.4.5",
+    "url-join": "^2.0.1"
   },
   "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
     "eslint": "^3.18.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3",
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "webpack": "^2.4.1"
   }
 }

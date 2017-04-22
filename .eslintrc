@@ -1,6 +1,12 @@
 {
   "extends": "airbnb",
   "rules": {
-    "comma-dangle": "off"
-  }
+    "comma-dangle": "off",
+    "react/jsx-filename-extension": "off",
+    "react/forbid-prop-types": "off"
+  },
+  "env": {
+    "browser": true
+  },
+  "parser": "babel-eslint"
 }

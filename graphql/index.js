@@ -3,6 +3,7 @@
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 const fetch = require('node-fetch');
+const urlJoin = require('url-join');
 
 const schema = buildSchema(`
   type Registry {
@@ -63,7 +64,8 @@ const root = (configuration) => {
           return data.components
             .map((component) => {
               const name = component.replace(configuration.baseUrl, '');
-              return fetchComponentInfo(configuration.baseUrl, name);
+              const url = urlJoin(configuration.baseUrl, configuration.prefix);
+              return fetchComponentInfo(url, name);
             });
         });
     },
