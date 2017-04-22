@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "bundle": "webpack",
-    "start": "yarn bundle && node index.js",
+    "postinstall": "yarn bundle",
+    "start": "node index.js",
     "start:dev": "DEBUG=pink-pineapple:* nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
