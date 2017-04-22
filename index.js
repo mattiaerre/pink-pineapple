@@ -22,7 +22,6 @@ const configuration = {
   },
   pollingInterval: Number(process.env.POLLING_INTERVAL),
   port: Number(process.env.PORT) || 3000,
-  prefix: '/v1/',
   s3: {
     bucket: process.env.S3_BUCKET,
     componentsDir: process.env.S3_COMPONENTS_DIR,
