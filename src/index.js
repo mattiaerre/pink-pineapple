@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import App from './containers/App/App';
 
 const Wrapper = styled.div`
-  font-family: consolas;
+  font-family: Consolas, monaco, monospace;
   padding: 2em;
   table {
     padding: 2em;

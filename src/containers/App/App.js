@@ -62,11 +62,13 @@ class App extends React.Component {
           <li>Components releases: {components.reduce((acc, val) => (acc + val.activity), 0)}</li>
           <li>Registry type: {registry.type}</li>
         </ul>
-        <table>
-          <tbody>
-            {rows}
-          </tbody>
-        </table>
+        <div className="table-container">
+          <table>
+            <tbody>
+              {rows}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
