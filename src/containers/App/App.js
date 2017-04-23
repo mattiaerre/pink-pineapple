@@ -49,7 +49,7 @@ class App extends React.Component {
         <td>
           <h3>{component.name}</h3>
           <p>{component.description}</p>
-          <div className="rendered">{renderHTML((features[RENDERED] && component.html) ? component.html : '')}</div>
+          {features[RENDERED] && <div className="rendered">{renderHTML(component.html ? component.html : '')}</div>}
         </td>
         <td>{component.latestVersion}</td>
         <td>{component.updated}</td>
