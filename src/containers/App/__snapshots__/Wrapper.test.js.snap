@@ -3,32 +3,38 @@
 exports[`Wrapper 1`] = `
 
 
-.fsWbGN {
+.igKbdi {
   font-family: Consolas, monaco, monospace;
   padding: 2em;
 }
 
-.fsWbGN table {
+.igKbdi table {
   padding: 2em;
   border-collapse: collapse;
   border: 1px solid gray;
 }
 
-.fsWbGN tbody tr:nth-child(odd) {
+.igKbdi tbody tr:nth-child(odd) {
   background: lightpink;
 }
 
-.fsWbGN tbody tr:nth-child(even) {
+.igKbdi tbody tr:nth-child(even) {
   background: papayawhip;
 }
 
-.fsWbGN th,
-.fsWbGN td {
+.igKbdi th,
+.igKbdi td {
   padding: 1em;
   border: 0px;
 }
 
+.igKbdi .rendered {
+  border: 1px solid gray;
+  padding: 0.5em;
+  background: white;
+}
+
 <div
-  className="sc-bdVaJa fsWbGN"
+  className="sc-bdVaJa igKbdi"
 />
 `;
