@@ -920,6 +920,12 @@ babel-plugin-transform-remove-undefined@^0.0.5:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-remove-undefined/-/babel-plugin-transform-remove-undefined-0.0.5.tgz#12ef11805e06e861dd2eb0c7cc041d2184b8f410"
 
+babel-plugin-transform-runtime@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-plugin-transform-runtime/-/babel-plugin-transform-runtime-6.23.0.tgz#88490d446502ea9b8e7efb0fe09ec4d99479b1ee"
+  dependencies:
+    babel-runtime "^6.22.0"
+
 babel-plugin-transform-simplify-comparison-operators@^6.8.1:
   version "6.8.1"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-simplify-comparison-operators/-/babel-plugin-transform-simplify-comparison-operators-6.8.1.tgz#a307088e0d1c728081777fba568f4107396ab25c"
@@ -936,6 +942,14 @@ babel-plugin-transform-undefined-to-void@^6.8.0:
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-undefined-to-void/-/babel-plugin-transform-undefined-to-void-6.8.0.tgz#bc5b6b4908d3b1262170e67cb3963903ddce167e"
   dependencies:
     babel-runtime "^6.0.0"
+
+babel-polyfill@^6.23.0:
+  version "6.23.0"
+  resolved "https://registry.yarnpkg.com/babel-polyfill/-/babel-polyfill-6.23.0.tgz#8364ca62df8eafb830499f699177466c3b03499d"
+  dependencies:
+    babel-runtime "^6.22.0"
+    core-js "^2.4.0"
+    regenerator-runtime "^0.10.0"
 
 babel-preset-babili@^0.0.12:
   version "0.0.12"
@@ -1375,7 +1389,7 @@ callsites@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/callsites/-/callsites-2.0.0.tgz#06eb84f00eea413da86affefacbffb36093b3c50"
 
-camelcase@^1.0.2:
+camelcase@^1.0.2, camelcase@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/camelcase/-/camelcase-1.2.1.tgz#9bb5304d2e0b56698b2c758b08a3eaa9daa58a39"
 
@@ -2295,6 +2309,10 @@ event-stream@~3.3.0:
     stream-combiner "~0.0.4"
     through "~2.3.1"
 
+eventemitter2@~0.4.13:
+  version "0.4.14"
+  resolved "https://registry.yarnpkg.com/eventemitter2/-/eventemitter2-0.4.14.tgz#8f61b75cde012b2e9eb284d4545583b5643b61ab"
+
 events@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/events/-/events-1.1.1.tgz#9ebdb7635ad099c70dcc4c2a1f5004288e8bd924"
@@ -2419,6 +2437,14 @@ fbjs@^0.8.5, fbjs@^0.8.9:
     promise "^7.1.1"
     setimmediate "^1.0.5"
     ua-parser-js "^0.7.9"
+
+feature-toggle@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/feature-toggle/-/feature-toggle-0.3.0.tgz#a271d46ba57359cfd020158303f1de73aded5fd4"
+  dependencies:
+    eventemitter2 "~0.4.13"
+    mout "~0.7.1"
+    stampit "~0.6.1"
 
 figures@^1.3.5:
   version "1.7.0"
@@ -3952,6 +3978,14 @@ morgan@^1.7.0:
     on-finished "~2.3.0"
     on-headers "~1.0.1"
 
+mout@~0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/mout/-/mout-0.5.0.tgz#ff967566a90f29595e9cb8b6e7800a5b56635583"
+
+mout@~0.7.1:
+  version "0.7.1"
+  resolved "https://registry.yarnpkg.com/mout/-/mout-0.7.1.tgz#218de2b0880b220d99f4fbaee3fc0c3a5310bda8"
+
 ms@0.7.1:
   version "0.7.1"
   resolved "https://registry.yarnpkg.com/ms/-/ms-0.7.1.tgz#9cd13c03adbff25b65effde7ce864ee952017098"
@@ -4502,6 +4536,10 @@ parse5@^1.5.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-1.5.1.tgz#9b7f3b0de32be78dc2401b17573ccaf0f6f59d94"
 
+parse5@^2.0.2:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-2.2.3.tgz#0c4fc41c1000c5e6b93d48b03f8083837834e9f6"
+
 parseurl@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.1.tgz#c8ab8c9223ba34888aa64a297b28853bec18da56"
@@ -4762,6 +4800,10 @@ rc@^1.0.1, rc@~1.1.6:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-attr-converter@0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/react-attr-converter/-/react-attr-converter-0.1.1.tgz#0591f5a1146e3ab9c8e4d303d6cf966f5e6d7608"
+
 react-dom@^15.3.2, react-dom@^15.5.4:
   version "15.5.4"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-15.5.4.tgz#ba0c28786fd52ed7e4f2135fe0288d462aef93da"
@@ -4781,6 +4823,15 @@ react-input-box-done-typing@^2.2.1:
 react-lite@^0.15.34:
   version "0.15.34"
   resolved "https://registry.yarnpkg.com/react-lite/-/react-lite-0.15.34.tgz#650604d700c8209f37f46195bb21d5c73c018aa1"
+
+react-render-html@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/react-render-html/-/react-render-html-0.1.6.tgz#57d63acc8e4a4cd0716bc5105af5c64c392f83b1"
+  dependencies:
+    camelcase "^3.0.0"
+    parse5 "^2.0.2"
+    react-attr-converter "0.1.1"
+    uppercamelcase "^1.1.0"
 
 react-test-renderer@^15.5.4:
   version "15.5.4"
@@ -5375,6 +5426,12 @@ sshpk@^1.7.0:
     jsbn "~0.1.0"
     tweetnacl "~0.14.0"
 
+stampit@~0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/stampit/-/stampit-0.6.1.tgz#a0c71e65e676a3f79be46c9cfb176b5cb5d935a0"
+  dependencies:
+    mout "~0.5.0"
+
 "statuses@>= 1.3.1 < 2", statuses@~1.3.1:
   version "1.3.1"
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.3.1.tgz#faf51b9eb74aaef3b3acf4ad5f61abf24cb7b93e"
@@ -5756,6 +5813,12 @@ updtr@^1.0.0:
     commander "^2.8.1"
     semver "^5.1.0"
     unicons "0.0.3"
+
+uppercamelcase@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/uppercamelcase/-/uppercamelcase-1.1.0.tgz#324d98a6b3afc7e8a8953e10641509b0e4e23f97"
+  dependencies:
+    camelcase "^1.2.1"
 
 urix@^0.1.0, urix@~0.1.0:
   version "0.1.0"

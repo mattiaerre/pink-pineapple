@@ -18,6 +18,11 @@ const Wrapper = styled.div`
     padding: 1em;
     border: 0px;
   }
+  .rendered {
+    border: 1px solid gray;
+    padding: 0.5em;
+    background: white;
+  }
 `;
 
 export default Wrapper;

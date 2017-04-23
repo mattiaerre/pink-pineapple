@@ -1,0 +1,3 @@
+((setFeatures) => {
+  setFeatures();
+})(window.setFeatures);

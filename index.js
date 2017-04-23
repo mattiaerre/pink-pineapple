@@ -3,6 +3,10 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const oc = require('oc');
+
+require('babel-core/register');
+require('babel-polyfill');
+
 const dependencies = require('./package.json').dependencies;
 const plugins = require('./plugins');
 const graphql = require('./graphql');
@@ -46,6 +50,7 @@ copy.graphqlUrl = '/graphql';
 graphql(registry, copy);
 
 registry.app.use('/v2', express.static(path.join(__dirname, '/public')));
+registry.app.use(express.static(path.join(__dirname, '/node_modules')));
 
 registry.start((error, app) => { // eslint-disable-line
   if (error) {

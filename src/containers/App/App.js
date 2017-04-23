@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import renderHTML from 'react-render-html';
+import { RENDERED } from '../../constants';
 import client from '../../graphql-client';
 
 class App extends React.Component {
@@ -7,6 +9,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       model: props.model,
+      features: props.features,
       registry: {},
       components: [{ activity: 0 }]
     };
@@ -26,6 +29,7 @@ class App extends React.Component {
         latestVersion
         updated
         activity
+        html
       }
     }
     `)
@@ -38,13 +42,14 @@ class App extends React.Component {
   }
 
   render() {
-    const { model, registry, components } = this.state;
+    const { model, features, registry, components } = this.state;
     /* eslint-disable react/no-array-index-key */
     const rows = components.map((component, index) => (
       <tr key={index}>
         <td>
           <h3>{component.name}</h3>
           <p>{component.description}</p>
+          <div className="rendered">{renderHTML((features[RENDERED] && component.html) ? component.html : '')}</div>
         </td>
         <td>{component.latestVersion}</td>
         <td>{component.updated}</td>
@@ -75,7 +80,8 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  model: PropTypes.object.isRequired
+  model: PropTypes.object.isRequired,
+  features: PropTypes.object.isRequired
 };
 
 export default App;
