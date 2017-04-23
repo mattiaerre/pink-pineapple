@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`oc-apod 1`] = `
+Object {
+  "apiKey": "DEMO_KEY",
+}
+`;
+
+exports[`oc-columbus-header 1`] = `
+Object {
+  "logoUrl": "http://www.uidownload.com/files/722/15/621/facebook-instagram-instagram-2016-instagram-logo-new-new-instagram-icon.png",
+  "title": "Instagram",
+}
+`;
+
+exports[`oc-social-media-buttons 1`] = `Object {}`;
+
+exports[`oc-timeago 1`] = `
+Object {
+  "start": "2016-02-22",
+}
+`;
