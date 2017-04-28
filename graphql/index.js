@@ -3,6 +3,7 @@
 const graphqlHTTP = require('express-graphql');
 const { buildSchema } = require('graphql');
 const fetch = require('node-fetch');
+const urlJoin = require('url-join');
 
 const schema = buildSchema(`
   type Registry {
@@ -18,6 +19,7 @@ const schema = buildSchema(`
     updated: String
     activity: Int
     state: String
+    html: String
   }
 
   type Query {
@@ -27,7 +29,7 @@ const schema = buildSchema(`
   }
 `);
 
-const fetchComponentInfo = (baseUrl, name) => {
+const fetchComponentInfo = async (baseUrl, name) => {
   const url = `${baseUrl}${name}/~info`;
   return fetch(url)
     .then(response => response.json())
@@ -43,6 +45,27 @@ const fetchComponentInfo = (baseUrl, name) => {
     });
 };
 
+const fetchComponent = async (baseUrl, name) => {
+  const url = `${baseUrl}${name}`;
+  return fetch(url)
+    .then(response => response.json())
+    .then((data) => {
+      return data;
+    });
+};
+
+const makeComponent = async (baseUrl, name) => {
+  const info = await fetchComponentInfo(baseUrl, name);
+  const component = await fetchComponent(baseUrl, name);
+  const copy = Object.assign({}, info);
+  if (component.error) {
+    copy.html = `<span>${component.error}</span>`;
+  } else {
+    copy.html = component.html;
+  }
+  return copy;
+};
+
 const root = (configuration) => {
   return {
     registry: () => {
@@ -56,19 +79,20 @@ const root = (configuration) => {
           };
         });
     },
-    components: () => {
+    components: async () => {
       return fetch(configuration.baseUrl)
         .then(response => response.json())
         .then((data) => {
           return data.components
             .map((component) => {
               const name = component.replace(configuration.baseUrl, '');
-              return fetchComponentInfo(configuration.baseUrl, name);
+              const url = urlJoin(configuration.baseUrl, configuration.prefix);
+              return makeComponent(url, name);
             });
         });
     },
-    component: ({ name }) => {
-      return fetchComponentInfo(configuration.baseUrl, name);
+    component: async ({ name }) => {
+      return makeComponent(configuration.baseUrl, name);
     }
   };
 };
@@ -80,24 +104,3 @@ module.exports = (registry, configuration) => {
     graphiql: configuration.discovery,
   }));
 };
-
-// GET http://127.0.0.1:3000
-// GET http://127.0.0.1:3000/oc-apod/~info
-
-/*
-{
-  registry {
-    baseUrl
-    version
-    type
-  }
-  components {
-    name
-    description
-    latestVersion
-    updated
-    activity
-    state
-  }
-}
-*/
