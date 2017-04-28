@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node index.js",
     "start:dev": "DEBUG=pink-pineapple:* nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Info: no test at all\" && exit 0"
   },
   "repository": {
     "type": "git",
