@@ -68,7 +68,7 @@
     "react-lite": "^0.15.34",
     "react-render-html": "^0.1.6",
     "react-test-renderer": "^15.5.4",
-    "styled-components": "1.4.5",
+    "styled-components": "next",
     "underscore": "^1.8.3",
     "updtr": "^1.0.0",
     "url-join": "^2.0.1",
