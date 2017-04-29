@@ -1,38 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Wrapper 1`] = `
-.corUcZ {
-  font-family: Consolas, monaco, monospace;
+
+
+.igKbdi {
+  font-family: Consolas, monaco, monospace;
   padding: 2em;
 }
 
-.corUcZ table {
+.igKbdi table {
   padding: 2em;
   border-collapse: collapse;
   border: 1px solid gray;
 }
 
-.corUcZ tbody tr:nth-child(odd) {
+.igKbdi tbody tr:nth-child(odd) {
   background: lightpink;
 }
 
-.corUcZ tbody tr:nth-child(even) {
+.igKbdi tbody tr:nth-child(even) {
   background: papayawhip;
 }
 
-.corUcZ th,
-.corUcZ td {
+.igKbdi th,
+.igKbdi td {
   padding: 1em;
   border: 0px;
 }
 
-.corUcZ .rendered {
+.igKbdi .rendered {
   border: 1px solid gray;
   padding: 0.5em;
   background: white;
 }
 
 <div
-  className="corUcZ"
+  className="sc-bdVaJa igKbdi"
 />
 `;
