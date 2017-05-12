@@ -4671,6 +4671,16 @@ object.omit@^2.0.0:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
 
+oc-registry-graphql-express-middleware@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/oc-registry-graphql-express-middleware/-/oc-registry-graphql-express-middleware-1.0.1.tgz#58e54290efa681377eb6c8d80d3d7a52d224aad0"
+  dependencies:
+    babel-core "^6.24.1"
+    babel-polyfill "^6.23.0"
+    express-graphql "^0.6.4"
+    graphql "^0.9.6"
+    node-fetch "^1.6.3"
+
 oc-template-handlebars@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/oc-template-handlebars/-/oc-template-handlebars-4.0.0.tgz#15ce9ef099821a52959bd1fd3b2e7b002a2acdc0"

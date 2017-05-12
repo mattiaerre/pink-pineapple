@@ -7,9 +7,10 @@ const oc = require('oc');
 require('babel-core/register');
 require('babel-polyfill');
 
+const graphql = require('oc-registry-graphql-express-middleware');
+
 const dependencies = require('./package.json').dependencies;
 const plugins = require('./plugins');
-const graphql = require('./graphql');
 
 const getDependencies = () => { // eslint-disable-line
   return Object.keys(dependencies)
@@ -44,10 +45,13 @@ const registry = new oc.Registry(configuration);
 
 plugins(registry);
 
-const copy = Object.assign({}, configuration);
-copy.graphqlUrl = '/graphql';
-
-graphql(registry, copy);
+registry.app.use(
+  '/graphql',
+  graphql({
+    baseUrl: configuration.baseUrl,
+    graphiql: configuration.discovery
+  })
+);
 
 registry.app.use('/v2', express.static(path.join(__dirname, '/public')));
 registry.app.use(express.static(path.join(__dirname, '/node_modules')));

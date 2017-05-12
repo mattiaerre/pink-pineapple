@@ -1,7 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import renderHTML from 'react-render-html';
-import { RENDERED } from '../../constants';
 import client from '../../graphql-client';
 
 class App extends React.Component {
@@ -9,9 +7,15 @@ class App extends React.Component {
     super(props);
     this.state = {
       model: props.model,
-      features: props.features,
       registry: {},
-      components: [{ activity: 0 }]
+      components: [
+        {
+          allVersions: [],
+          author: {},
+          repository: {},
+          parameters: []
+        }
+      ]
     };
   }
 
@@ -19,17 +23,30 @@ class App extends React.Component {
     client.query(`
     {
       registry {
-        baseUrl
-        version
+        href
+        ocVersion
         type
       }
       components {
         name
         description
-        latestVersion
-        updated
-        activity
-        html
+        version
+        allVersions
+        author {
+          name
+          email
+        }
+        repository {
+          type
+          url
+        }
+        parameters {
+          key
+          type
+          mandatory
+          example
+          description
+        }
       }
     }
     `)
@@ -42,17 +59,29 @@ class App extends React.Component {
   }
 
   render() {
-    const { model, features, registry, components } = this.state;
+    const { model, registry, components } = this.state;
     /* eslint-disable react/no-array-index-key */
     const rows = components.map((component, index) => (
       <tr key={index}>
         <td>
-          <h3>{component.name}</h3>
+          <h2>{component.name}</h2>
           <p>{component.description}</p>
-          {features[RENDERED] && <div className="rendered">{renderHTML(component.html ? component.html : '')}</div>}
+          <span>
+            <a href={component.repository.url} rel="noopener noreferrer" target="_blank">{component.repository.url}</a>
+          </span>
+          <h3>Parameters</h3>
+          <ul>
+            {component.parameters.map(parameter => (
+              <li key={parameter.key}>
+                {parameter.key} ({parameter.type}|{parameter.mandatory ? 'mandatory' : 'optional'})
+              </li>
+            ))}
+          </ul>
         </td>
-        <td>{component.latestVersion}</td>
-        <td>{component.updated}</td>
+        <td>{component.version}</td>
+        <td>
+          <a href={`mailto:${component.author.email}`}>{component.author.name}</a>
+        </td>
       </tr>
     ));
     /* eslint-enable */
@@ -61,10 +90,13 @@ class App extends React.Component {
       <div>
         <h1>{model.title}</h1>
         <ul>
-          <li>Base url: {registry.baseUrl}</li>
-          <li>Version: {registry.version}</li>
+          <li>Base url: {registry.href}</li>
+          <li>Version: {registry.ocVersion}</li>
           <li>Components: {components.length}</li>
-          <li>Components releases: {components.reduce((acc, val) => (acc + val.activity), 0)}</li>
+          <li>Components releases: {
+            components.reduce(
+              (acc, val) => (acc + val.allVersions.length), 0)
+          }</li>
           <li>Registry type: {registry.type}</li>
         </ul>
         <div className="table-container">
@@ -80,8 +112,7 @@ class App extends React.Component {
 }
 
 App.propTypes = {
-  model: PropTypes.object.isRequired,
-  features: PropTypes.object.isRequired
+  model: PropTypes.object.isRequired
 };
 
 export default App;
