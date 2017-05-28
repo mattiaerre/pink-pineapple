@@ -49,7 +49,8 @@ registry.app.use(
   '/graphql',
   graphql({
     baseUrl: configuration.baseUrl,
-    graphiql: configuration.discovery
+    graphiql: configuration.discovery,
+    dependencies: configuration.dependencies
   })
 );
 
