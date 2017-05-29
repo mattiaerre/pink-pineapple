@@ -4772,9 +4772,9 @@ object.omit@^2.0.0:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
 
-oc-registry-graphql-express-middleware@^1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/oc-registry-graphql-express-middleware/-/oc-registry-graphql-express-middleware-1.1.1.tgz#a56e2312935c6f271238b1ba30edd2c94f1f01d0"
+oc-registry-graphql-express-middleware@^1.1.2:
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/oc-registry-graphql-express-middleware/-/oc-registry-graphql-express-middleware-1.1.2.tgz#da0095f0b7b2f6db444e19fb75e7e8506c477a94"
   dependencies:
     babel-core "^6.24.1"
     babel-polyfill "^6.23.0"
