@@ -73,6 +73,7 @@
     "underscore": "^1.8.3",
     "updtr": "^1.0.0",
     "url-join": "^2.0.2",
+    "version-middleware": "^1.2.0",
     "webpack": "^2.5.1"
   },
   "jest": {

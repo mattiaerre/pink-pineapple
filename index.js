@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const oc = require('oc');
+const version = require('version-middleware');
 
 require('babel-core/register');
 require('babel-polyfill');
@@ -56,6 +57,7 @@ registry.app.use(
 
 registry.app.use('/v2', express.static(path.join(__dirname, '/public')));
 registry.app.use(express.static(path.join(__dirname, '/node_modules')));
+registry.app.get('/version', version());
 
 registry.start((error, app) => { // eslint-disable-line
   if (error) {
