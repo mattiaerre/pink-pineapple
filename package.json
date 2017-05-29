@@ -61,7 +61,7 @@
     "nodemon": "^1.11.0",
     "npm-check": "^5.4.4",
     "oc": "^0.37.2",
-    "oc-registry-graphql-express-middleware": "^1.1.3",
+    "oc-registry-graphql-express-middleware": "^1.1.4",
     "prop-types": "^15.5.9",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
