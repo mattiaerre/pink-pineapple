@@ -1,33 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Wrapper 1`] = `
-
-
-.fsWbGN {
-  font-family: Consolas, monaco, monospace;
-  padding: 2em;
-}
-
-.fsWbGN table {
-  padding: 2em;
-  border-collapse: collapse;
-  border: 1px solid gray;
-}
-
-.fsWbGN tbody tr:nth-child(odd) {
-  background: lightpink;
-}
-
-.fsWbGN tbody tr:nth-child(even) {
-  background: papayawhip;
-}
-
-.fsWbGN th,
-.fsWbGN td {
-  padding: 1em;
-  border: 0px;
-}
-
 <div
   className="sc-bdVaJa fsWbGN"
 />
