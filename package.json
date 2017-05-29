@@ -1,6 +1,6 @@
 {
   "name": "pink-pineapple",
-  "version": "1.8.2",
+  "version": "1.8.3",
   "description": "An \"Open\" OpenComponents registry hosted on Heroku",
   "main": "index.js",
   "scripts": {
