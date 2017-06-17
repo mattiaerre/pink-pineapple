@@ -2,7 +2,7 @@ const debug = require('debug')('pink-pineapple:index');
 require('dotenv').config();
 const express = require('express');
 const path = require('path');
-const oc = require('oc');
+const Registry = require('oc').Registry;
 const version = require('version-middleware');
 
 require('babel-core/register');
@@ -42,7 +42,7 @@ const configuration = {
 
 debug(`configuration: ${JSON.stringify(configuration, 0, 2)}`);
 
-const registry = new oc.Registry(configuration);
+const registry = new Registry(configuration);
 
 plugins(registry);
 
