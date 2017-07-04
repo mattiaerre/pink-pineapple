@@ -6,7 +6,7 @@
   "scripts": {
     "bundle": "webpack",
     "npm-check": "npm-check",
-    "postinstall": "yarn bundle",
+    "postinstall": "npm run bundle",
     "start": "node index.js",
     "start:dev": "DEBUG=pink-pineapple:* nodemon index.js",
     "test": "jest",
