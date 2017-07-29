@@ -1,6 +1,6 @@
 {
   "name": "pink-pineapple",
-  "version": "1.9.5",
+  "version": "1.10.0",
   "description": "An \"Open\" OpenComponents registry hosted on Heroku",
   "main": "index.js",
   "scripts": {
@@ -42,41 +42,43 @@
     "babel-preset-stage-3": "^6.24.1",
     "debug": "^2.6.8",
     "dotenv": "^4.0.0",
-    "eslint": "^3.18.0",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-plugin-import": "^2.3.0",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.2",
     "eslint-plugin-react": "^7.1.0",
     "express": "^4.15.3",
-    "express-graphql": "^0.6.6",
+    "express-graphql": "^0.6.7",
     "feature-toggle": "^0.3.0",
-    "graphql": "^0.10.1",
+    "graphql": "^0.10.5",
     "jest": "^20.0.1",
-    "jest-styled-components": "^3.1.5",
+    "jest-styled-components": "^4.2.2",
     "lodash": "^4.17.4",
     "lokka": "^1.7.0",
     "lokka-transport-http": "^1.6.1",
     "moment": "^2.18.1",
     "node-fetch": "^1.7.1",
     "nodemon": "^1.11.0",
-    "npm-check": "^5.4.4",
-    "oc": "^0.38.1",
+    "oc": "^0.39.8",
     "oc-registry-graphql-express-middleware": "^1.1.4",
     "prop-types": "^15.5.9",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-input-box-done-typing": "^2.2.1",
     "react-lite": "^0.15.37",
-    "react-render-html": "^0.2.0",
+    "react-render-html": "^0.5.0",
     "react-test-renderer": "^15.6.1",
     "styled-components": "^2.0.1",
     "underscore": "^1.8.3",
     "updtr": "^2.0.0",
     "url-join": "^2.0.2",
-    "version-middleware": "^1.2.0",
-    "webpack": "^3.0.0"
+    "version-middleware": "^1.3.0",
+    "webpack": "^3.4.1"
   },
   "jest": {
     "testEnvironment": "node"
+  },
+  "devDependencies": {
+    "npm-check": "^5.4.5"
   }
 }
