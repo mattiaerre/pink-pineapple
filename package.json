@@ -80,5 +80,8 @@
   },
   "devDependencies": {
     "npm-check": "^5.4.5"
+  },
+  "engines": {
+    "node": "8.2.x"
   }
 }
