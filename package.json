@@ -1,16 +1,14 @@
 {
   "name": "pink-pineapple",
-  "version": "1.10.1",
+  "version": "1.10.4",
   "description": "An \"Open\" OpenComponents registry hosted on Heroku",
   "main": "index.js",
   "scripts": {
     "bundle": "webpack",
-    "npm-check": "npm-check",
     "postinstall": "npm run bundle",
     "start": "node index.js",
     "start:dev": "DEBUG=pink-pineapple:* nodemon index.js",
-    "test": "jest",
-    "updtr": "updtr"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -70,7 +68,6 @@
     "react-test-renderer": "^15.6.1",
     "styled-components": "^2.0.1",
     "underscore": "^1.8.3",
-    "updtr": "^2.0.0",
     "url-join": "^2.0.2",
     "version-middleware": "^1.3.0",
     "webpack": "^3.4.1"
@@ -79,9 +76,11 @@
     "testEnvironment": "node"
   },
   "devDependencies": {
-    "npm-check": "^5.4.5"
+    "npm-check": "^5.4.5",
+    "updtr": "^2.0.0"
   },
   "engines": {
-    "node": "8.2.x"
+    "node": "8.x.x",
+    "npm": "5.x.x"
   }
 }
