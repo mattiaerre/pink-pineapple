@@ -3,7 +3,8 @@
   "rules": {
     "comma-dangle": "off",
     "react/jsx-filename-extension": "off",
-    "react/forbid-prop-types": "off"
+    "react/forbid-prop-types": "off",
+    "jsx-a11y/href-no-hash": "off"
   },
   "env": {
     "browser": true,
