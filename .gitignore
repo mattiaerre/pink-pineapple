@@ -40,5 +40,4 @@ temp
 .env
 
 bundle.*
-HOW-TO-PERCY.md
 package-lock.json
