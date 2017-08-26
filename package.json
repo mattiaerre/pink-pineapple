@@ -58,7 +58,7 @@
     "node-fetch": "^1.7.1",
     "nodemon": "^1.11.0",
     "oc": "^0.40.1",
-    "oc-free-geo-ip-plugin": "^1.0.0-alpha.1",
+    "oc-free-geo-ip-plugin": "^1.0.0-alpha.2",
     "oc-registry-graphql-express-middleware": "^1.1.4",
     "prop-types": "^15.5.9",
     "react": "^15.6.1",
